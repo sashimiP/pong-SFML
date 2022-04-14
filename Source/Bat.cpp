@@ -80,3 +80,12 @@ void Bat::Render(sf::RenderWindow& l_window)
 {
 	l_window.draw(m_Shape);
 }
+
+void Bat::hasScored(bool hasScored)
+{
+	m_scored = hasScored;
+}
+//return true/false depending on whether you got a score point
+bool Bat::getScored() {
+	return m_scored;
+}
