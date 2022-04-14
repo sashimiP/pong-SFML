@@ -25,7 +25,6 @@ void Textbox::setMessage(Bat& bat)
 {
 	std::stringstream m_message;
 	m_message << "Score:" << bat.getScore() << "\tLives:" << bat.getLives();
-	std::cout << m_message.str();
 	m_hud.setString(m_message.str());
 }
 
