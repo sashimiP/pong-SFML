@@ -58,9 +58,8 @@ void Game::Update() {
 	//Handle ball hitting top
 	if (m_ball.getPosition().top < 0)
 	{
-		m_ball.reboundBatOrTop();
+		m_ball.reboundTop(m_bat);
 		//Add a point to the players score
-		m_bat.addScore();
 		m_textbox.setMessage(m_bat);
 	}
 	//Handle ball hitting sides
@@ -73,11 +72,16 @@ void Game::Update() {
 	if (m_ball.getPosition().intersects(m_bat.getPosition()))
 	{
 		//Hit detected so reverse the ball and score a point
-		m_ball.reboundBatOrTop();
+		m_ball.reboundBat();
 		m_ball.setSpeed();
-		m_bat.addScore();
+		if (!m_bat.getScored())
+		{
+			m_bat.addScore();
+			m_bat.hasScored(true);
+		}
 		std::cout << "Ball speed: " << m_ball.getSpeed() << std::endl;
 		m_textbox.setMessage(m_bat);
+
 	}
 	
 	m_bat.update(dt);
