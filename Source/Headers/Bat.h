@@ -14,8 +14,7 @@ private:
 	bool m_MovingLeft = false;
 	int m_score = 0;
 	int m_lives = 3;
-	bool hasScored = false;
-	
+	bool m_scored = false;
 
 public:
 	Bat(float startX, float startY);
@@ -47,7 +46,7 @@ public:
 	void update(sf::Time dt);
 
 	void Render(sf::RenderWindow& l_window);
-	
+
 	bool getScored();
 
 	void hasScored(bool hasScored);
