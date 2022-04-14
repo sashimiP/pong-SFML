@@ -1,5 +1,6 @@
 #pragma once
 #include<SFML/Graphics.hpp>
+#include "Bat.h"
 class Ball
 {
 private:
