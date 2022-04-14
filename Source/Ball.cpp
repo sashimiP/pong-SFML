@@ -31,7 +31,13 @@ void Ball::reboundSides()
 	m_DirectionX = -m_DirectionX;
 }
 
-void Ball::reboundBatOrTop()
+void Ball::reboundTop(Bat &bat)
+{
+	m_DirectionY = -m_DirectionY;
+	bat.hasScored(false);
+}
+
+void Ball::reboundBat()
 {
 	m_DirectionY = -m_DirectionY;
 }
